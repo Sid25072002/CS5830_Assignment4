@@ -1,0 +1,13 @@
+data_source:
+  base_url: https://www.ncei.noaa.gov/data/local-climatological-data/access/
+  year: 2022
+  output: C:/Users/sid25/Downloads/CS5830_Assignment4/Climate_dataset{year}.html
+  local: C:/Users/sid25/Downloads/CS5830_Assignment4
+  max_files: 10
+  temp_dir: C:/Users/sid25/Downloads/CS5830_Assignment4/data
+data_process:
+  dest_folder: C:/Users/sid25/Downloads/CS5830_Assignment4/process_data
+data_prepare:
+  dest_folder: C:/Users/sid25/Downloads/CS5830_Assignment4/prepare_data
+evaluate:
+  output: C:/Users/sid25/Downloads/CS5830_Assignment4/output

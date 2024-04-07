@@ -1,0 +1,39 @@
+stages:
+  download:
+    cmd: python download.py
+    deps:
+    - download.py
+    params:
+    - data_source.base_url
+    - data_source.local
+    - data_source.max_files
+    - data_source.output
+    - data_source.year
+    outs:
+    - temp_dir/
+  prepare:
+    cmd: python prepare.py
+    deps:
+    - prepare.py
+    - temp_dir
+    params:
+    - data_source.output
+    outs:
+    - data_prepare.dest_folder/
+  process:
+    cmd: python process.py
+    deps:
+    - process.py
+    - temp_dir
+    params:
+    - data_prepare.dest_folder
+    outs:
+    - data_process.dest_folder/
+  evaluate:
+    cmd: python evaluate.py
+    deps:
+    - data_prepare.dest_folder
+    - data_process.dest_folder
+    - evaluate.py
+    outs:
+    - evaluate.output
